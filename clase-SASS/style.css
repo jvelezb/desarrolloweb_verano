@@ -1,0 +1,112 @@
+.tabla {
+  color: yellow;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 30px;
+  text-decoration: none;
+  text-decoration-color: yellow;
+  color: red;
+}
+
+.clase_1_loquesea {
+  font-size: 21px;
+}
+
+.clase_2_loquesea {
+  font-size: 18px;
+}
+
+.clase_3_loquesea {
+  font-size: 15px;
+}
+
+.clase_4_loquesea {
+  font-size: 12px;
+}
+
+.clase_5_loquesea {
+  font-size: 9px;
+}
+
+.clase_6_loquesea {
+  font-size: 6px;
+}
+
+.leon-foto {
+  padding: 3em;
+}
+
+.perro-foto {
+  padding: 3em;
+}
+
+.gato-foto {
+  padding: 3em;
+}
+
+.elefant-foto {
+  padding: 3em;
+}
+
+img {
+  border-width: 30px;
+  padding: 100px;
+  color: white;
+}
+
+.img2 {
+  border-width: 60px;
+  padding: 100px;
+}
+
+.clase_funcion {
+  margin: 32px;
+}
+
+.clase_f2 {
+  color: red;
+}
+
+.alumnos_md {
+  color: #FF0000;
+}
+
+.alumnos_lg {
+  color: #BB0000;
+}
+
+button {
+  color: black;
+}
+button:focus {
+  color: red;
+}
+
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
+  body {
+    border-width: 60px;
+    padding: 100px;
+    color: gray;
+  }
+}
+@media (min-width: 1024px) {
+  #logo {
+    background-color: yellow;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #logo {
+    background-color: red;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

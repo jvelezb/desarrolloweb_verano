@@ -1,0 +1,145 @@
+$color: yellow;
+
+.tabla{color:$color;}
+
+
+nav{
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		display: inline-block;
+		
+	}
+	a{
+		display:block;
+		padding: 6px 30px;
+		text-decoration:none;
+		text-decoration-color:$color;
+		color: red;
+		
+	}
+}
+
+@for $valor from 1 through 6{
+	.clase_#{$valor}_loquesea{
+		font-size: 24px - 3*$valor;
+	}
+}
+
+@each $animal in leon,perro,gato,elefant{
+	.#{$animal}-foto{
+		padding:3em;
+
+	}
+}
+
+
+@mixin borde($tamano){
+	border-width: $tamano * 3;
+	padding:100px;
+}
+
+img{
+	@include borde(10px);
+	color:white;
+}
+
+.img2{
+	@include borde(20px);
+}
+
+
+@function pow($base,$exp){
+	$resultado :1;
+	@for $_ from 1 through $exp{
+		$resultado: $resultado * $base;
+	}
+	@return $resultado;
+}
+
+.clase_funcion{
+	margin: pow(2,5)*1px;
+}
+
+@function f2($color){
+	@return $color;
+}
+.clase_f2{
+	color: f2(red);
+}
+
+$selector : 'alumnos';
+
+.#{$selector}_md{
+	color: #FF0000;
+}
+.#{$selector}_lg{
+	color: #BB0000;
+}
+
+button{
+	color: black;
+
+	&:focus{
+		color: red;
+	}
+}
+
+
+@media(min-width:768px) and
+	(-webkit-min-device-pixel-ratio: 2),
+	(min-width: 768px) and (min-resolution:192dpi){
+
+
+		body{
+			@include borde(20px);
+			color: gray;
+		}
+	}
+
+
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@include desktop{
+	#logo{
+		background-color: yellow;
+	}
+}
+
+
+@include tablet{
+	#logo{
+		background-color: red;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
