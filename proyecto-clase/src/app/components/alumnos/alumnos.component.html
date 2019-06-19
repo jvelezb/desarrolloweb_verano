@@ -1,4 +1,14 @@
-<h1> Alumnos</h1>
-<div *ngFor="let al of alumnos">
-	<alumno [data]="al"></alumno>
-</div>
+<table class="table">
+			  <thead>
+			    <tr>
+			      <th >matricula</th>
+			      <th >Nombre</th>
+			      <th >A.Paterno</th>
+			      <th >A. Materno</th>
+			    </tr>
+			  </thead>
+		  	<tbody>
+				<tr *ngFor="let alumno of alumnos" alumno-app [alumno]="alumno" ></tr>
+				
+			</tbody>
+</table>

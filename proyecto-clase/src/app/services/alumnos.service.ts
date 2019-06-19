@@ -9,13 +9,19 @@ export class AlumnosService {
 
 getAlumnos(){
 	return[{
-		nombre:"alumno1",
+		nombre:"Juan",
+		paterno:"Velez",
+		materno:"Ballesteros",
 		matricula: 1
 	},{
-		nombre:"alumno2",
+		nombre:"Pedro",
+		paterno:"Ramirez",
+		materno:"Suarez",
 		matricula: 2
 	},{
-		nombre:"alumno3",
+		nombre:"Diana",
+		paterno:"Lopez",
+		materno:"Perez",
 		matricula: 3
 	}
 

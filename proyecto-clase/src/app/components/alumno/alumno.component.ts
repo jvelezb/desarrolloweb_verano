@@ -1,12 +1,14 @@
 import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
-  selector: 'alumno',
+  selector: '[alumno-app]',
   templateUrl: './alumno.component.html',
   styleUrls: ['./alumno.component.scss']
 })
 export class AlumnoComponent implements OnInit {
-	@Input() data;
+
+
+@Input() alumno;
   constructor() { }
 
   ngOnInit() {
