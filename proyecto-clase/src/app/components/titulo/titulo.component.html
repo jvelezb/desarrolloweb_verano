@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  
+     <h1>{{ 'tituloComponent.title' | translate }} {{calificacion}} </h1>
+<button  id="b1" class="btn" [class.btn-primary]="calificacion<70" [class.btn-secondary]="calificacion>=70" (click)="leDiClick($event)">Submit</button>
+
+<div class="contenedor">
+ 
+  <div class="contenedor-botones">
+    <button  class="btn btn-primary btn-lg" [ngClass]="{'disabled': activeLang == 'es'}" (click)="cambiarLenguaje('es')">Español</button>
+    <button   class="btn btn-primary btn-lg" [ngClass]="{'disabled': activeLang == 'en'}" (click)="cambiarLenguaje('en')">Inglés</button>
+    <button  class="btn btn-primary btn-lg" [ngClass]="{'disabled': activeLang == 'jp'}" (click)="cambiarLenguaje('jp')">Japonés</button>
+     <button  class="btn btn-primary btn-lg" [ngClass]="{'disabled': activeLang == 'pr'}" (click)="cambiarLenguaje('pr')">Portugues</button>
+  </div>
+</div>

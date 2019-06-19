@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {AlumnosService}  from '../services/alumnos.service';
+import {AlumnosService}  from '../../services/alumnos.service';
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
