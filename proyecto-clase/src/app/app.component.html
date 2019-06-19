@@ -3,6 +3,10 @@
   <h1 class=".h1">
      {{ variable_chistosa }}
   </h1>
-<button class="btn btn-primary">Submit</button>
+<button  id="b1" class="btn" [class.btn-primary]="calificacion<70" [class.btn-secondary]="calificacion>=70" (click)="leDiClick($event)">Submit</button>
+
+<app-alumnos></app-alumnos>
+
+
   
 
