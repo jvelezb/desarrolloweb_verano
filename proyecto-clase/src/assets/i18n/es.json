@@ -1,4 +1,9 @@
 {
   "tituloComponent":
   	{ "title" : "listado de alumnos"}
+  	,"alumnosComponent":{
+  		"matricula":"Matricula",
+  		"nombre":"Nombre(s)",
+  		"paterno":"A. Paterno",
+  		"materno":"A Manrno"}
 }

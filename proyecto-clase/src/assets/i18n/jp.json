@@ -1,5 +1,9 @@
 {
   "tituloComponent": {
   	"title" : "学生のリスト"
-  }
+  },"alumnosComponent":{
+  		"matricula":"入会",
+  		"nombre":"お名前",
+  		"paterno":"父方の姓",
+  		"materno":"母方の姓"}
 }

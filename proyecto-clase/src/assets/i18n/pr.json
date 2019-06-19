@@ -1,5 +1,9 @@
 {
   "tituloComponent" : {
   	"title" : "Listado de estudantes"
-  }
+  },"alumnosComponent":{
+  		"matricula":"ID",
+  		"nombre":"Nome",
+  		"paterno":"sobrenome",
+  		"materno":"sobrenome"}
 }

@@ -1,5 +1,9 @@
 {
   "tituloComponent":{
   	"title" : "Student list"
-  }
+  },"alumnosComponent":{
+  		"matricula":"ID",
+  		"nombre":"First Name",
+  		"paterno":"Last Name",
+  		"materno":"Mother's Name"}
 }
