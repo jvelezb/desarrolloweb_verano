@@ -5,5 +5,10 @@
   		"matricula":"入会",
   		"nombre":"お名前",
   		"paterno":"父方の姓",
-  		"materno":"母方の姓"}
+  		"materno":"母方の姓"},
+  		"formulario":{
+  		"matricula":"ID",
+  		"nombre":"First Name",
+  		"paterno":"Last Name",
+  		"materno":"Mother's Name"}
 }

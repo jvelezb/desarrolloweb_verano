@@ -1,0 +1,43 @@
+<!--h1>-{{aJson}}-</h1-->
+<form #formulario="ngForm">
+  <div class="form-group">
+    <label for="matricula">{{'formulario.matricula' | translate }}</label>
+    <input type="number" class="form-control" id="matricula" placeholder="A00XXXXX" [(ngModel)]="alumno.matricula" name="matricula">
+  </div>
+
+
+   <div class="form-grou p">
+    <label for="nombre">{{'formulario.nombre' | translate }}</label>
+    <input type="text" class="form-control" id="nombre" placeholder="juan" name="nombre" [(ngModel)]="alumno.nombre">
+  </div>
+
+    <div class="form-group">
+    <label for="paterno">{{'formulario.paterno' | translate }}</label>
+    <input type="text" class="form-control" id="paterno" placeholder="paterno" name="paterno" [(ngModel)]="alumno.paterno"  #name="ngModel" required="required">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+    Falta llenar el cmpo
+</div>
+  </div>
+
+  <div class="form-group">
+    <label for="materno">{{'formulario.carrera' | translate }}</label>
+    <select class="form-control" id="carrera" [(ngModel)]="alumno.carrera" name="carrera">
+    	<option></option>
+    	
+   		 <option *ngFor="let carrera of carreras" [value]="carrera">{{carrera}}</option>
+  
+    </select>
+  </div>
+
+
+   <button type="submit" class="btn btn-success" (click)="enviar();formulario.reset();" >Submit</button>
+
+</form>
+<div [hidden]="!submitted">
+	ya se envio
+</div>
+
+
+
+
+

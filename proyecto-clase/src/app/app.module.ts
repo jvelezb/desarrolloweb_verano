@@ -7,13 +7,59 @@ import { Titulo2Component } from './components/titulo2/titulo2.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
 import { HeaderComponent } from './components/header/header.component';
+import { FormularioComponent } from './components/formulario/formulario.component';
+import { ListadoAlumnosComponent } from './components/listado-alumnos/listado-alumnos.component';
+import { AlumnoDetailComponent } from './components/alumno-detail/alumno-detail.component';
+import { FormsModule }   from '@angular/forms';
 
 
 
+
+import { Routes, RouterModule } from '@angular/router';
+
+
+//translate
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 //npm install @ngx-translate/core @ngx-translate/http-loader --save
+
+
+
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+
+
+const routes: Routes = [
+    {
+        path: '',
+        component: AlumnosComponent
+    },
+    {
+        path: 'listaAlumnos',
+        component: ListadoAlumnosComponent
+    },
+     {
+        path: 'formulario',
+        component: FormularioComponent
+    }
+    ,
+    {
+        path: 'alumnoDetails/:id',
+        component: AlumnoDetailComponent
+
+    },
+     {
+        path: 'alumnoRegister',
+        component: AlumnoDetailComponent,
+        data : {alumno : 'some value'}
+
+    }, {
+        path: 'hola',
+        component: FormularioComponent
+    }
+
+];
+
 
 @NgModule({
   declarations: [
@@ -22,9 +68,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     Titulo2Component,
     AlumnosComponent,
     AlumnoComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormularioComponent,
+    ListadoAlumnosComponent,
+    AlumnoDetailComponent
   ],
   imports: [
+     FormsModule,
+    RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -37,7 +88,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       }
     })
   ],
+  exports:[RouterModule]  ,
   providers: [],
-  bootstrap: [AppComponent,TituloComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 
+
 @Component({
   selector: '[alumno-app]',
   templateUrl: './alumno.component.html',

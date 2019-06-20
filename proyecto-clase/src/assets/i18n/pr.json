@@ -5,5 +5,10 @@
   		"matricula":"ID",
   		"nombre":"Nome",
   		"paterno":"sobrenome",
-  		"materno":"sobrenome"}
+  		"materno":"sobrenome"},
+  	"formulario":{
+  		"matricula":"ID",
+  		"nombre":"First Name",
+  		"paterno":"Last Name",
+  		"materno":"Mother's Name"}
 }
