@@ -1,0 +1,11 @@
+{
+  "name": "mongo_conn",
+  "connector": "mongodb",
+  "url": "mongodb+srv://user:tvbl6u1m@cluster0-8zpqd.mongodb.net/verano2019?retryWrites=true&w=majority",
+  "host": "cluster0-8zpqd.mongodb.net",
+  "port": 27017,
+  "user": "user",
+  "password": "tvbl6u1m",
+  "database": "verano2019",
+  "useNewUrlParser": true
+}
