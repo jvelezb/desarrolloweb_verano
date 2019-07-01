@@ -1,6 +1,8 @@
 import {Request, RestBindings, get, ResponseObject} from '@loopback/rest';
 import {inject} from '@loopback/context';
 
+
+
 /**
  * OpenAPI response for ping()
  */
@@ -48,4 +50,36 @@ export class PingController {
       headers: Object.assign({}, this.req.headers),
     };
   }
+
+    @get('/ping/is-authenticated')
+  
+  testIsAuthenticated() {
+    return {message: 'isAuthenticated: OK'};
+  }
+
+  @get('/ping/permit-all')
+  
+  testPermitAll() {
+    return {message: 'permitAll: OK'};
+  }
+
+  @get('/ping/deny-all')
+ 
+  testDenyAll() {
+    return {message: 'denyAll: OK'};
+  }
+
+  @get('/ping/has-any-role')
+  
+  testHasAnyRole() {
+    return {message: 'hasAnyRole: OK'};
+  }
+
+  @get('/ping/has-roles')
+  
+  testHasRoles() {
+    return {message: 'hasRoles: OK'};
+  }
+
+
 }

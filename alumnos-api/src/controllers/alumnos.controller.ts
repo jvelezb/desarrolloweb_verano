@@ -5,6 +5,15 @@ import {
   repository,
   Where,
 } from '@loopback/repository';
+
+import {
+  authenticate,
+  UserProfile,
+  AuthenticationBindings,
+  TokenService,
+  UserService,
+} from '@loopback/authentication';
+
 import {
   post,
   param,
@@ -27,6 +36,8 @@ export class AlumnosController {
     public alumnoRepository : AlumnoRepository,
   ) {}
 
+
+
   @post('/alumnos', {
     responses: {
       '200': {
@@ -38,7 +49,8 @@ export class AlumnosController {
   async create(@requestBody() alumno: Alumno): Promise<Alumno> {
     return await this.alumnoRepository.create(alumno);
   }
-
+  
+   @authenticate('jwt')
   @get('/alumnos/count', {
     responses: {
       '200': {
