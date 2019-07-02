@@ -1,14 +1,22 @@
-<table class="table">
+
+
+
+<div>
+  <button (click)="add()"  class="btn btn-primary">
+    Add
+  </button>
+</div>
+  <table class="table">
 			  <thead>
 			    <tr>
 			      <th >{{ 'alumnosComponent.matricula' | translate }}</th>
 			      <th >{{ 'alumnosComponent.nombre' | translate }}</th>
 			      <th >{{ 'alumnosComponent.paterno' | translate }}</th>
 			      <th >{{ 'alumnosComponent.materno' | translate }}</th>
+			      <th >{{ 'alumnosComponent.opciones' | translate }}</th>
 			    </tr>
 			  </thead>
 		  	<tbody>
-				<tr *ngFor="let alumno of alumnos" alumno-app [alumno]="alumno" ></tr>
-				
+				<tr *ngFor="let variableAlumno of alumnos" alumno-app [loquesea]="variableAlumno" (deleteMsg)="deleteAlumno($event)"></tr>
 			</tbody>
 </table>

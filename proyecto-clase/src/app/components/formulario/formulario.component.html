@@ -1,5 +1,23 @@
-<!--h1>-{{aJson}}-</h1-->
-<form #formulario="ngForm">
+<!--1>-{{aJson}}-</h1-->
+
+<div class="btn-group" dropdown>
+  <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+          aria-controls="dropdown-basic">
+    Button dropdown <span class="caret"></span>
+  </button>
+  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+      role="menu" aria-labelledby="button-basic">
+    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+    <li class="divider dropdown-divider"></li>
+    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+    </li>
+  </ul>
+</div>
+
+
+<form #formulario="ngForm" [hidden]="submitted">
   <div class="form-group">
     <label for="matricula">{{'formulario.matricula' | translate }}</label>
     <input type="number" class="form-control" id="matricula" placeholder="A00XXXXX" [(ngModel)]="alumno.matricula" name="matricula">
@@ -13,7 +31,7 @@
 
     <div class="form-group">
     <label for="paterno">{{'formulario.paterno' | translate }}</label>
-    <input type="text" class="form-control" id="paterno" placeholder="paterno" name="paterno" [(ngModel)]="alumno.paterno"  #name="ngModel" required="required">
+    <input type="text" class="form-control" id="paterno" placeholder="paterno" name="patrno" [(ngModel)]="alumno.paterno"  #name="ngModel" required="required">
     <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
     Falta llenar el cmpo
 </div>

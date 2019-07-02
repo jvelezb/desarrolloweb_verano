@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { CarouselModule } from 'ngx-bootstrap';
+
+
 import { AppComponent } from './app.component';
 import { TituloComponent } from './components/titulo/titulo.component';
 import { Titulo2Component } from './components/titulo2/titulo2.component';
@@ -11,6 +15,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { ListadoAlumnosComponent } from './components/listado-alumnos/listado-alumnos.component';
 import { AlumnoDetailComponent } from './components/alumno-detail/alumno-detail.component';
 import { FormsModule }   from '@angular/forms';
+import { ProfesorComponent } from './components/profesor/profesor.component';
 
 
 
@@ -26,6 +31,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -56,6 +62,9 @@ const routes: Routes = [
     }, {
         path: 'hola',
         component: FormularioComponent
+    }, {
+        path: 'admin/profesor',
+        component: ProfesorComponent
     }
 
 ];
@@ -71,10 +80,13 @@ const routes: Routes = [
     HeaderComponent,
     FormularioComponent,
     ListadoAlumnosComponent,
-    AlumnoDetailComponent
+    AlumnoDetailComponent,
+    ProfesorComponent
   ],
   imports: [
      FormsModule,
+     BsDropdownModule.forRoot(),
+     CarouselModule.forRoot(),
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
@@ -86,7 +98,8 @@ const routes: Routes = [
         },
         deps: [ HttpClient ]
       }
-    })
+    }),
+    BrowserAnimationsModule
   ],
   exports:[RouterModule]  ,
   providers: [],
