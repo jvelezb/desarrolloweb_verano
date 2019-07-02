@@ -9,10 +9,12 @@ import { map, catchError, tap } from 'rxjs/operators';
 })
 export class AlumnosService {
 
+
 	 endpoint = 'http://localhost:3000/alumnos';
 	 httpOptions = {
   		headers: new HttpHeaders({
-    	'Content-Type':  'application/json'
+    	'Content-Type':  'application/json',
+       
  	 })
 	};
 
@@ -61,14 +63,14 @@ getAlumno(matricula): Observable<any> {
 
 addAlumno (alumno): Observable<any> {
   console.log(alumno);
-  return this.http.post<any>(this.endpoint + '/', JSON.stringify(alumno), httpOptions).pipe(
+  return this.http.post<any>(this.endpoint + '/', JSON.stringify(alumno), this.httpOptions).pipe(
     tap((alumno) => console.log(`added alumno w/ matricula=${alumno.matricula}`)),
     catchError(this.handleError<any>('addAlumno'))
   );
 }
 
 updateAlumno (matricula, alumno): Observable<any> {
-  return this.http.put(this.endpoint + '/' + matricula, JSON.stringify(alumno), httpOptions).pipe(
+  return this.http.put(this.endpoint + '/' + matricula, JSON.stringify(alumno), this.httpOptions).pipe(
     tap(_ => console.log(`updated alumno matricula=${matricula}`)),
     catchError(this.handleError<any>('updateALumno'))
   );

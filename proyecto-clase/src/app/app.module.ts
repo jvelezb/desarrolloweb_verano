@@ -30,41 +30,56 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './components/login/login.component';
 
 
+import { JwtInterceptor } from './helpers/jwt.interceptor';
+import { ErrorInterceptor   } from './helpers/error.interceptor'
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     {
         path: '',
-        component: AlumnosComponent
+        component: AlumnosComponent,
+        canActivate: [AuthGuard]
+    },
+     {
+        path: 'login',
+        component: LoginComponent
     },
     {
         path: 'listaAlumnos',
-        component: ListadoAlumnosComponent
+        component: ListadoAlumnosComponent,
+         canActivate: [AuthGuard]
     },
      {
         path: 'formulario',
-        component: FormularioComponent
+        component: FormularioComponent,
+         canActivate: [AuthGuard]
     }
     ,
     {
         path: 'alumnoDetails/:id',
-        component: AlumnoDetailComponent
+        component: AlumnoDetailComponent,
+         canActivate: [AuthGuard]
 
     },
      {
         path: 'alumnoRegister',
         component: AlumnoDetailComponent,
-        data : {alumno : 'some value'}
+        data : {alumno : 'some value'},
+         canActivate: [AuthGuard]
 
     }, {
         path: 'hola',
-        component: FormularioComponent
+        component: FormularioComponent,
+         canActivate: [AuthGuard]
     }, {
         path: 'admin/profesor',
-        component: ProfesorComponent
+        component: ProfesorComponent,
+         canActivate: [AuthGuard]
     }
 
 ];
@@ -81,7 +96,8 @@ const routes: Routes = [
     FormularioComponent,
     ListadoAlumnosComponent,
     AlumnoDetailComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    LoginComponent
   ],
   imports: [
      FormsModule,
@@ -102,7 +118,10 @@ const routes: Routes = [
     BrowserAnimationsModule
   ],
   exports:[RouterModule]  ,
-  providers: [],
+  providers: [ 
+                { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+                { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+        ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

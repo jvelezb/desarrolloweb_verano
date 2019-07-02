@@ -7,6 +7,8 @@ import { FormsModule }   from '@angular/forms';
 
 
 
+
+
 @Component({
   selector: 'app-alumnos',
   templateUrl: './alumnos.component.html',
@@ -37,7 +39,7 @@ export class AlumnosComponent implements OnInit {
   }
 
 
-   deleteAlumno($event) {
+   /*deleteAlumno($event) {
      console.log($event);
     this.alumnosService.deleteAlumnos($event)
       .subscribe(res => {
@@ -46,7 +48,7 @@ export class AlumnosComponent implements OnInit {
           console.log(err);
         }
       );
-  }
+  }*/
 
 
 
