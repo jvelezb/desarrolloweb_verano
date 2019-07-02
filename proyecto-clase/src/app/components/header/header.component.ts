@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-
+import {User} from '../../models/user';
 
 import { AuthenticationService } from '../../services/authentication.service';
 
@@ -15,6 +15,9 @@ import { AuthenticationService } from '../../services/authentication.service';
 })
 export class HeaderComponent implements OnInit {
 
+	@Input() currentUser:User;
+
+
   constructor(
 
 
@@ -24,6 +27,7 @@ export class HeaderComponent implements OnInit {
         ) { }
 
   ngOnInit() {
+  	//console.log(currentUser);
   }
 
    logout() {

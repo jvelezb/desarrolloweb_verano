@@ -43,11 +43,12 @@ const routes: Routes = [
     {
         path: '',
         component: AlumnosComponent,
-        canActivate: [AuthGuard]
+       canActivate: [AuthGuard]
     },
      {
         path: 'login',
-        component: LoginComponent
+        component: LoginComponent,
+
     },
     {
         path: 'listaAlumnos',
