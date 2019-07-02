@@ -34,13 +34,6 @@ export class AlumnoDetailComponent implements OnInit {
   }
 
 
-   addProduct() {
-    this.alumnosService.addProduct(this.productData).subscribe((result) => {
-      this.router.navigate(['/product-details/'+result._id]);
-    }, (err) => {
-      console.log(err);
-    });
-  }
 
 
 }
